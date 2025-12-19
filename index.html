@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Thays • Presente de 20 anos ✨🎀</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti"></canvas>
+  <div class="sparkles"></div>
+
+  <div class="hearts" aria-hidden="true">
+    <span>💗</span><span>💖</span><span>💞</span><span>💕</span><span>💗</span>
+    <span>💖</span><span>💞</span><span>💕</span><span>💗</span><span>💖</span>
+  </div>
+
+  <!-- Modal surpresa -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modalCard" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="close" id="closeModal" aria-label="Fechar">✕</button>
+      <h3 id="modalTitle">Surpresa 🎁</h3>
+      <p id="modalText" class="modalText"></p>
+      <div class="modalBtns">
+        <button id="moreSurprise">Mais uma ✨</button>
+        <button class="ghost" id="confettiNow">Confete 🎉</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <section class="card">
+      <div class="ribbon">
+        <span class="dot"></span>
+        <strong id="pill">Thays • 20 anos 🎀</strong>
+      </div>
+
+      <!-- HERO -->
+      <header class="hero">
+        <div class="heroLeft">
+          <h1 class="title" id="title">Feliz 20, Thays! ✨</h1>
+          <p class="subtitle" id="subtitle">
+            Esse site é um presente: um cantinho só seu, cheio de carinho, memórias e surpresas 💖
+          </p>
+
+          <div class="heroBtns">
+            <button id="btnOpenGift">Abrir o presente 🎁</button>
+            <button class="ghost" id="btnConfetti">Soltar confete 🎉</button>
+          </div>
+
+          <div class="chips">
+            <span class="chip">🎀 Bem menina</span>
+            <span class="chip">✨ Brilhante</span>
+            <span class="chip">💗 Carinho</span>
+            <span class="chip">🧁 Doce</span>
+          </div>
+        </div>
+
+        <div class="heroRight">
+          <div class="countBox">
+            <div class="countTitle">🌸 20 coisas lindas sobre você</div>
+            <p class="countHint">Role pra ver “20 motivos”, a carta e as surpresas 💞</p>
+            <div class="miniStats">
+              <div class="stat"><b id="statPhotos">0</b><span>fotos</span></div>
+              <div class="stat"><b id="statReasons">20</b><span>motivos</span></div>
+              <div class="stat"><b id="statNotes">0</b><span>recados</span></div>
+            </div>
+          </div>
+
+          <div class="cakeWrap" aria-hidden="true">
+            <div class="cake">
+              <div class="plate"></div>
+              <div class="layer one"><div class="sprinkles"></div></div>
+              <div class="layer two"><div class="drip"></div></div>
+              <div class="candle"><div class="flame"></div></div>
+              <div class="ageTag" id="ageTag">20</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- CONTEÚDO -->
+      <section class="content">
+
+        <!-- Carta -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>Uma carta pra você 💌</h2>
+            <div class="panelActions">
+              <button class="ghost" id="btnCopyLetter" type="button">Copiar carta</button>
+              <button class="ghost" id="btnPrint" type="button">Imprimir / PDF</button>
+            </div>
+          </div>
+          <p class="letter" id="letter"></p>
+          <p class="tiny">Dica: você pode editar a carta no <b>script.js</b> e deixar do jeitinho de vocês.</p>
+        </article>
+
+        <!-- 20 motivos -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>20 motivos pra te admirar ✨</h2>
+            <button class="ghost" id="btnShuffle" type="button">Embaralhar</button>
+          </div>
+          <div class="reasons" id="reasons"></div>
+        </article>
+
+        <!-- Galeria (com upload) -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>Galeria de memórias 📸</h2>
+            <div class="panelActions">
+              <label class="fileBtn">
+                Adicionar fotos ➕
+                <input id="photoInput" type="file" accept="image/*" multiple />
+              </label>
+              <button class="ghost" id="btnClearGallery" type="button">Limpar</button>
+            </div>
+          </div>
+          <p class="tiny">As fotos ficam salvas no navegador (neste dispositivo).</p>
+          <div class="gallery" id="gallery"></div>
+        </article>
+
+        <!-- Playlist (com adicionar músicas) -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>Playlist dela 🎶</h2>
+            <button class="ghost" id="btnClearPlaylist" type="button">Limpar</button>
+          </div>
+
+          <form id="songForm" class="songForm">
+            <input id="songName" type="text" placeholder="Nome da música" maxlength="50" required />
+            <input id="songArtist" type="text" placeholder="Artista" maxlength="50" required />
+            <input id="songUrl" type="url" placeholder="Link (Spotify/YouTube) — opcional" />
+            <button type="submit">Adicionar 🎵</button>
+          </form>
+
+          <div class="playlist" id="playlist"></div>
+          <p class="tiny">Dica: se colocar link, dá pra clicar e abrir a música.</p>
+        </article>
+
+        <!-- Cápsula do tempo -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>Cápsula do tempo ⏳</h2>
+            <span class="tiny">Uma promessa pro “eu do futuro”</span>
+          </div>
+
+          <div class="capsule">
+            <div class="capsuleBox">
+              <div class="capsuleTitle">Uma frase pra Thays ler daqui 1 ano 💖</div>
+              <p class="capsuleText" id="capsuleText"></p>
+              <button id="btnNewCapsule" type="button">Nova frase ✨</button>
+            </div>
+
+            <div class="capsuleBox">
+              <div class="capsuleTitle">Missões fofas (pra viver nos 20)</div>
+              <ul class="missions" id="missions"></ul>
+            </div>
+          </div>
+        </article>
+
+        <!-- Mural -->
+        <article class="panel">
+          <div class="panelHead">
+            <h2>Mural de recadinhos 📝</h2>
+            <span class="tiny">Fica salvo no navegador (local). Dá pra encher antes de entregar!</span>
+          </div>
+
+          <form id="guestbookForm" class="gbForm">
+            <input id="gbName" type="text" placeholder="Seu nome" maxlength="30" required />
+            <input id="gbMsg" type="text" placeholder="Seu recadinho (ex: 'Você é incrível! 💖')" maxlength="90" required />
+            <button type="submit">Enviar 💌</button>
+          </form>
+
+          <div class="gbList" id="guestbookList"></div>
+        </article>
+
+      </section>
+
+      <footer class="footer">
+        <span id="footerText">Feito com carinho pra Thays 💖</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
