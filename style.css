@@ -440,3 +440,95 @@ button.ghost{
   background: #ffffffcc;
 }
 
+/* =========================
+   RESPONSIVO (CELULAR)
+   Cole no FINAL do style.css
+   ========================= */
+
+/* Ajustes gerais */
+@media (max-width: 520px){
+  .wrap{ padding: 14px 10px; }
+  .card{ border-radius: 20px; }
+  .ribbon{ top: 10px; left: 10px; padding: 8px 10px; }
+  .ribbon strong{ font-size: 12px; }
+
+  .hero{ padding: 62px 12px 12px; gap: 12px; }
+  .title{ font-size: 34px; }
+  .subtitle{ font-size: 15px; }
+
+  .chips{ gap: 6px; }
+  .chip{ padding: 8px 10px; font-size: 12px; }
+
+  /* Botões em coluna (toque melhor no celular) */
+  .heroBtns{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .heroBtns button{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* Conteúdo */
+  .content{ padding: 0 12px 12px; gap: 12px; }
+  .panel{ padding: 14px; border-radius: 18px; }
+
+  /* Cabeçalho dos painéis quebra bonitinho */
+  .panelHead{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .panelActions{
+    width: 100%;
+    flex-wrap: wrap;
+  }
+  .panelActions button,
+  .panelActions .fileBtn{
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 20 motivos em 1 coluna */
+  .reasons{ grid-template-columns: 1fr; }
+
+  /* Galeria em 2 colunas no celular */
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+
+  /* Cápsula em 1 coluna */
+  .capsule{ grid-template-columns: 1fr; }
+
+  /* Form do mural em 1 coluna */
+  .gbForm{ grid-template-columns: 1fr; }
+
+  /* Form da playlist em 1 coluna */
+  .songForm{ grid-template-columns: 1fr; }
+
+  /* Caixa de stats menor */
+  .miniStats{ grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .stat{ padding: 8px 6px; border-radius: 14px; }
+  .stat b{ font-size: 18px; }
+
+  /* Bolo menor pra caber */
+  .cake{ transform: scale(.88); transform-origin: top center; }
+}
+
+/* Telas bem pequenas */
+@media (max-width: 360px){
+  .title{ font-size: 30px; }
+  .gallery{ grid-template-columns: 1fr; } /* vira 1 coluna */
+  .cake{ transform: scale(.80); }
+}
+
+/* Modal responsivo */
+@media (max-width: 520px){
+  .modalCard{ padding: 14px; border-radius: 18px; }
+  .modalBtns{
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .modalBtns button{
+    width: 100%;
+    justify-content: center;
+  }
+}
